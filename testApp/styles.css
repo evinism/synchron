@@ -1,0 +1,19 @@
+.clients {
+  width: 100%;
+  display: flex;
+}
+
+section {
+  width: 400px;
+  min-width: 400px;
+  margin: 10px;
+  box-shadow: 0px 0px 10px lightgrey;
+  padding: 10px;
+  font-size: 12px;
+  overflow: auto;
+}
+
+section h2 {
+  padding: 0px;
+  font-family: sans-serif;
+}

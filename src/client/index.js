@@ -60,6 +60,4 @@
   toset: [ events ];
 */
 
-console.log('yee');
-
-export default from './testClient';
+export default from './basicTestClient';

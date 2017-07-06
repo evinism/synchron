@@ -1,11 +1,12 @@
 import React from 'react';
 import ClientInstance from '../ClientInstance';
 
-const App = () => (
+const App = ({instances: {clients, server}}) => (
   <div>
     <h1> app </h1>
-    <ClientInstance name="1" />
-    <ClientInstance name="2" />
+    <div className="clients">
+      {clients.map( (client, idx) => (<ClientInstance key={client.name} {...client} />))}
+    </div>
   </div>
 );
 

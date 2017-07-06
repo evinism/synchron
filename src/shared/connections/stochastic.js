@@ -5,7 +5,7 @@ export default function Stochastic(){
   const rightPipe = Basic();
 
   const generateDelay = () => {
-    return Math.random()*700 + 500;
+    return Math.random()*2000 + 500;
   };
 
   leftPipe.right.subscribe(
