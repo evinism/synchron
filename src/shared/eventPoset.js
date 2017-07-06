@@ -9,7 +9,10 @@
 function popNextEvent(eventHash, leafNodes){
   const nextNodeId = Object.values(eventHash).filter(
     event => leafNodes.includes(event.parentId)
-  ).map(event => event.id).sort()[0];
+  ).sort(
+    // score based on recievedTime
+    (a, b) => a.recievedTime - b.recievedTime
+  ).map(event => event.id)[0];
   const nextNode = eventHash[nextNodeId];
   let newLeafNodes = leafNodes;
   if (!newLeafNodes.includes(nextNodeId)) {
@@ -17,7 +20,7 @@ function popNextEvent(eventHash, leafNodes){
   }
   const restOfEvents = Object.assign({}, eventHash);
   delete restOfEvents[nextNodeId];
-  if(!nextNode && Object.keys(restOfEvents).length > 0) debugger;
+  //if(!nextNode && Object.keys(restOfEvents).length > 0) debugger;
   return [ nextNode, restOfEvents, newLeafNodes ];
 }
 

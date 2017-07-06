@@ -17,7 +17,7 @@ export default () => {
 
   const registerEvent = (event) => {
     lastEventIdSeen = event.id;
-    eventHash[event.id] = event;
+    eventHash[event.id] = {...event, recievedTime: new Date()};
   }
 
   return {
